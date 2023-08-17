@@ -1,5 +1,20 @@
-const Todos = () => {
-  return <div>Todos Page</div>;
+import { resolve } from "styled-jsx/css";
+import TodoList from "../../../../components/TodoList";
+import db from "../../../../utils/db";
+
+const getData = async () => {
+  const todos = await db.todo.findMany({});
+
+  return todos;
+};
+
+const Todos = async () => {
+  const todos = await getData();
+  return (
+    <div>
+      <TodoList todos={todos} />
+    </div>
+  );
 };
 
 export default Todos;

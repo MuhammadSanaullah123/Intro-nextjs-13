@@ -1,7 +1,12 @@
+import NewTodoForm from "../../../components/NewTodoForm";
+
 const DashbaordLayout = ({ children }) => {
   return (
     <>
-      <div>DashbaordLayout</div>
+      <h1>DashbaordLayout</h1>
+      <div>
+        <NewTodoForm />
+      </div>
       <div>{children}</div>
     </>
   );
